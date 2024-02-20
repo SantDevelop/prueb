@@ -1,0 +1,13 @@
+<%- include('partials/head.ejs') %>
+
+<div>
+    <form action="/register" method="POST">
+        <input type="text" maxlength="15" minlength="5" name="username" placeholder="Username *" required>
+        <input type="text" maxlength="15" minlength="5" name="name" placeholder="Name *" required>
+        <input type="email" minlength="5" name="email" placeholder="Email *" required>
+        <input type="password" maxlength="6" minlength="3" name="password" required>
+        <input type="submit">
+    </form>
+</div>
+
+<%- include('partials/foot.ejs') %>

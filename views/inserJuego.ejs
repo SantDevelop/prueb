@@ -1,0 +1,13 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/cabecera.ejs') %>
+<div>
+    <form action="/inJuego" method="POST">
+        <input type="text" maxlength="45" minlength="5" name="titulo" placeholder="Titulo *" required>
+        <input type="date" name="lanzamiento" required>
+        <textarea name="descripcion" id="" cols="30" rows="10" maxlength="150" minlength="5" placeholder="Descripcion" required></textarea>
+        <input type="text" name="portada" placeholder="URL de imagen *" required>
+        <input type="submit" value="Añadir">
+    </form>
+</div>
+
+<%- include('partials/foot.ejs') %>

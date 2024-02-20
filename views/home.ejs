@@ -1,0 +1,26 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/cabecera.ejs') %>
+<div>
+    <div>
+        <% if(juegos) {%>
+            <% for (juego of juegos) {%>
+                <img src="<%= juego.portada %>" alt="" class="w-[150px]">
+                <h2><%= juego.titulo %></h2>
+                <p><%= juego.descripcion %></p>
+                <p><%= juego.lanzamiento %></p>
+                <form action="/eliminar" method="POST">
+                    <input type="hidden" value="<%= juego.id %>" name="id">
+                    <input type="submit" value="Eliminar">
+                </form>
+                <form action="/modificar" method="POST">
+                    <input type="hidden" value="<%= juego.id %>" name="id">
+                    <input type="submit" value="Modificar">
+                </form>
+            <%}%>
+        <%} else {%>
+            <h3>No hay juegos que mostrar</h3>
+        <%}%>
+    </div>
+</div>
+
+<%- include('partials/foot.ejs') %>

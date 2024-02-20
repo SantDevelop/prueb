@@ -1,0 +1,14 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/cabecera.ejs') %>
+<div>
+    <form action="/modijuego" method="POST">
+        <input type="hidden" name="id" value="<%= juego.id %>">
+        <input type="text" maxlength="45" minlength="5" name="titulo" placeholder="Titulo *" value="<%= juego.titulo %>" required>
+        <input type="date" name="lanzamiento" value="<%= juego.lanzamiento %>" required>
+        <textarea name="descripcion" id="" cols="30" rows="10" maxlength="150" minlength="5" placeholder="Descripcion"  required><%= juego.descripcion %></textarea>
+        <input type="text" name="portada" placeholder="URL de imagen *" value="<%= juego.portada %>" required>
+        <input type="submit" value="Modificar">
+    </form>
+</div>
+
+<%- include('partials/foot.ejs') %>
